@@ -8,3 +8,22 @@ body,
 html {
   height: 100%;
 }
+
+.leaflet-legend-list {
+    padding: 6px;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    background: #fff;
+    border-radius: 5px;
+}
+.leaflet-legend-item {
+    white-space: nowrap;
+    padding-bottom: 2px;
+}
+.leaflet-legend-text, .leaflet-legend-color {
+    display: inline-block;
+}
+.leaflet-legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}

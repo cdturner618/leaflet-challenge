@@ -140,18 +140,28 @@ function createMap(earthquakes) {
         collapsed: false
     }).addTo(myMap);
 
-    L.control.legend({
-        postion: 'bottomright',
-        items: [
+    var legend = L.control({
+        position: 'bottomright'
+    });
+    legend.onAdd = function createLegend(legend) {
+        var className = 'leaflet-legend';
+        var items = [
             { color: 'LawnGreen', label: '-10 - 10' },
             { color: 'DarkSeaGreen', label: '10 - 30' },
             { color: 'Gold', label: '30 - 50' },
             { color: 'Orange', label: '50 - 70' },
             { color: 'OrangeRed', label: '70 - 90' },
             { color: 'DarkRed', label: '90+' }
-        ],
-        collapsed: true,
-        // insert different label for the collapsed legend button.
-        buttonHtml: 'legend'
-    }).addTo(myMap);
+        ];
+        var list = L.DomUtil.create('div', className + '-list');
+        items.forEach(function (item) {
+            var div = L.DomUtil.create('div', className + '-item', list);
+            var colorbox = L.DomUtil.create('div', className + '-color', div);
+            colorbox.innerHTML = '&nbsp;';
+            colorbox.style.backgroundColor = item.color;
+            L.DomUtil.create('div', className + '-text', div).innerHTML = item['label'];
+        });
+        return list;
+    }
+    legend.addTo(myMap);
 }
