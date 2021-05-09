@@ -1,7 +1,7 @@
 // Store our API endpoint inside queryUrl
 var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/1.0_week.geojson";
 
-console.log(queryUrl)
+// console.log(queryUrl)
 // Perform a GET request to the query URL
 d3.json(queryUrl).then(function (data) {
     // Once we get a response, send the data.features object to the createFeatures function
@@ -132,7 +132,7 @@ function createMap(earthquakes) {
         layers: [satellite, earthquakes]
     });
 
-//add legend: 
+    //add legend: 
     L.control.layers(baseMaps, overlayMaps, {
         collapsed: false
     }).addTo(myMap);
