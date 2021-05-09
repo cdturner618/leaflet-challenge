@@ -130,7 +130,7 @@ function createMap(earthquakes) {
             26.723338, -37.018170
         ],
         zoom: 2.5,
-        layers: [streetmap, earthquakes]
+        layers: [satellite, earthquakes]
     });
 
     // Create a layer control
@@ -143,8 +143,12 @@ function createMap(earthquakes) {
     L.control.legend({
         postion: 'bottomright',
         items: [
-            { color: 'red', label: 'reserved' },
-            { color: 'blue', label: 'not reserved' }
+            { color: 'LawnGreen', label: '-10 - 10' },
+            { color: 'DarkSeaGreen', label: '10 - 30' },
+            { color: 'Gold', label: '30 - 50' },
+            { color: 'Orange', label: '50 - 70' },
+            { color: 'OrangeRed', label: '70 - 90' },
+            { color: 'DarkRed', label: '90+' }
         ],
         collapsed: true,
         // insert different label for the collapsed legend button.
