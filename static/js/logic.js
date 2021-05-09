@@ -44,7 +44,6 @@ function createFeatures(earthquakeData) {
         //Style Map
         var mapstyle = {
             color: 'white',
-            // fillColor: 'pink',
             fillOpacity: 0.5,
             weight: 1.5
         };
@@ -133,9 +132,7 @@ function createMap(earthquakes) {
         layers: [satellite, earthquakes]
     });
 
-    // Create a layer control
-    // Pass in our baseMaps and overlayMaps
-    // Add the layer control to the map
+//add legend: 
     L.control.layers(baseMaps, overlayMaps, {
         collapsed: false
     }).addTo(myMap);
